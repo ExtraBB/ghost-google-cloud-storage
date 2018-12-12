@@ -1,5 +1,5 @@
 # Ghost Google Cloud Storage Plugin
-A simple plugin to add Google Cloud Storage support for a Ghost Blog
+A simple plugin to add Google Cloud Storage support for a Ghost Blog. **Forked** to support a private_key / service email combo instead of just a path to a key file.
 
 ## Installation
 ```bash
@@ -35,7 +35,8 @@ Add a `storage` block to your `config.${GHOST_ENVIRONMENT}.json` as below:
     "active": "gcloud",
     "gcloud": {
         "projectId": "Your_project_id",
-        "key": "Your_key_path",
+        "key": "Your_key",
+        "client_email": "Your_client_email",
         "bucket": "Your_bucket_name",
         "assetDomain": "domain-for-bucket.example.com",
         "insecure": true,
