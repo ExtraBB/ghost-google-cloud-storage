@@ -13,7 +13,10 @@ class GStore extends BaseStore {
 
         var gcs = storage({
             projectId: options.projectId,
-            keyFilename: options.key
+            credentials: {
+                client_email: options.client_email,
+                private_key: options.key.toString().replace(/\\n/g, "\n")
+            }
         });
         this.bucket = gcs.bucket(options.bucket);
         this.assetDomain = options.assetDomain || `${options.bucket}.storage.googleapis.com`;
